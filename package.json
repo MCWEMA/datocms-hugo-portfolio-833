@@ -1,5 +1,5 @@
 {
-  "name": "creative-inc",
+  "name": "wemalabs",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "start:hugo": "hugo -w --config config.dev.toml",
     "start:datocms": "dato dump --watch",
     "start:livereload": "livereload public -e 'html' -p 5678",
-    "start": "mkdir -p content && dato check && concurrently -p \"[{name}]\" -c \"blue,red,green,yellow\" -k -n hugo,webpack,livereload,dato \"yarn run start:hugo\" \"yarn run start:assets\" \"yarn run start:livereload\" \"yarn run start:datocms\""
+    "start": "NODE_ENV=development && dato check && concurrently -p \"[{name}]\" -c \"blue,red,green,yellow\" -k -n hugo,webpack,livereload,dato \"yarn run start:hugo\" \"yarn run start:assets\" \"yarn run start:livereload\" \"yarn run start:datocms\""
   },
   "dependencies": {
     "imagesloaded": "^4.1.4",
